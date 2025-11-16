@@ -29,7 +29,7 @@ class FamipackingGraphDataset(InMemoryDataset):
     
     def download(self):
         if self.dataset_name=='famipacking':
-            raw_url='https://github.com/bakirkhon/Thesis/raw/recovered-work/3D-bin-packing-master/dataset/training_dataset_irregular.pt'
+            raw_url='https://github.com/bakirkhon/Thesis/raw/recovered-work/3D-bin-packing-master/dataset/training_dataset_irregular1.pt'
         else:
             raise ValueError(f'Unknown dataset {self.dataset_name}')
         file_path=download_url(raw_url, self.raw_dir)
