@@ -207,7 +207,7 @@ def main(cfg: DictConfig):
 
         print("Running inference mode (predict_edges)...")
         # Load inference dataset
-        inference_path = "/home/bakirkhon/Thesis/3D-bin-packing-master/dataset/inference_dataset_irregular.pt"
+        inference_path = "./Thesis/3D-bin-packing-master/dataset/inference_dataset_irregular.pt"
         assert os.path.exists(inference_path), f"File not found: {inference_path}"
         all_graphs = torch.load(inference_path)
         print(f"Loaded {len(all_graphs)} graphs from inference dataset.")
@@ -228,7 +228,7 @@ def main(cfg: DictConfig):
             predictions.append({"X": graph["X"], "E": E_pred.cpu().numpy()})
 
         # Save predictions
-        output_file = "/home/bakirkhon/Thesis_irregular/inference_irregular_predictions.pt"
+        output_file = "./Thesis_irregular/inference_irregular_predictions.pt"
         torch.save(predictions, output_file)
         print(f"✅ Saved predictions for {len(predictions)} graphs to:\n{os.path.abspath(output_file)}")
 
